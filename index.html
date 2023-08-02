@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css" />
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- boostrap icons -->
     <link
       rel="stylesheet"
@@ -33,11 +36,13 @@
       class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
     >
       <main>
-        <h4>Kepada Bpk/Ibu/Saudara/i,</h4>
-        <h1>Qadafi & Nurjana</h1>
+        <h4 data-aos="fade-left">Kepada Bpk/Ibu/Saudara/i,</h4>
+        <h1 data-aos="fade-right">Qadafi & Nurjana</h1>
         <p>Akan Melangsungkan Pernikahan Dalam :</p>
-        <div class="simply-countdown"></div>
-        <a href="#undangan" class="btn btn-outline mt-4">Lihat Undangan</a>
+        <div class="simply-countdown" data-aos="flip-right"></div>
+        <a href="#home" class="btn btn-outline mt-4 btnundangan"
+          >Lihat Undangan</a
+        >
       </main>
     </section>
 
@@ -87,7 +92,7 @@
     <!-- Home start -->
 
     <section id="home" class="home">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         <div class="row justify-content-center">
           <div class="col-md-8 text-center">
             <h2>Acara Pernikahan</h2>
@@ -108,7 +113,7 @@
       <div class="row couple">
         <div class="col-lg-6">
           <div class="row">
-            <div class="col-8 text-end">
+            <div class="col-8 text-end" data-aos="fade-right">
               <h3>Qadafi Abubakar</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -119,7 +124,7 @@
                 Ibu Ipsum
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-4" data-aos="flip-right">
               <img
                 src="img/Laki-laki.jpg"
                 alt="laki"
@@ -130,14 +135,14 @@
         </div>
         <div class="col-lg-6">
           <div class="row">
-            <div class="col-4">
+            <div class="col-4" data-aos="flip-left">
               <img
                 src="img/perempuan.jpg"
                 alt="perempuan"
                 class="img-responsive rounded-circle"
               />
             </div>
-            <div class="col-8">
+            <div class="col-8" data-aos="fade-left">
               <h3>Nurjana</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -195,7 +200,7 @@
             </div>
 
             <div class="card-footer text-muted">
-              Saat acara akad diharapkan untuk kundusif menjaga kekhudmatan dak
+              Saat acara akad diharapkan untuk kundusif menjaga kekhudmatan dan
               kekhususyuan seluruh prosesi.
             </div>
           </div>
@@ -230,6 +235,28 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+
+    <!-- script AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+
+    <!-- play audio js -->
+    <script>
+      const audio = new Audio(
+        "audio/_Marry Your Daughter_ - Brian McKnight Jr. [Official Music Video] (mp3cut.net).mp3"
+      );
+      const buttons = document.querySelectorAll(".btnundangan");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          audio.play();
+        });
+      });
+    </script>
 
     <script>
       simplyCountdown(".simply-countdown", {
